@@ -11,16 +11,16 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg:     #000000;
-      --bg3:    #141414;
-      --line:   rgba(255,255,255,0.08);
-      --white:  #ffffff;
-      --gray1:  #f5f5f5;
-      --gray2:  #a1a1a1;
-      --gray3:  #555555;
-      --tag-2d: #4a9eff;
-      --tag-3d: #bf6bff;
-      --tag-ai: #00d4a0;
+      --bg:     #f0f0f8;
+      --bg3:    #ffffff;
+      --line:   rgba(0,0,0,0.08);
+      --white:  #1a1530;
+      --gray1:  #2a2848;
+      --gray2:  #6b6b90;
+      --gray3:  #a8a8c0;
+      --tag-2d: #2d6fd6;
+      --tag-3d: #7c3aed;
+      --tag-ai: #00977a;
       --radius: 16px;
       --nav-h:  64px;
       --font:   'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -45,7 +45,7 @@
       height: var(--nav-h);
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 40px;
-      background: rgba(0,0,0,0.6);
+      background: rgba(240,240,248,0.85);
       backdrop-filter: blur(24px) saturate(180%);
       -webkit-backdrop-filter: blur(24px) saturate(180%);
       border-bottom: 1px solid var(--line);
@@ -64,7 +64,7 @@
     /* HERO */
     #hero {
       position: relative;
-      background: #000;
+      background: var(--bg);
       margin-top: var(--nav-h);
     }
     .hero-img-wrap {
@@ -116,7 +116,7 @@
     .skill-meta { display: flex; justify-content: space-between; align-items: center; }
     .skill-name { font-size: 14px; font-weight: 500; color: var(--gray1); }
     .skill-level { font-size: 11px; color: var(--gray3); }
-    .skill-bar { height: 2px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
+    .skill-bar { height: 2px; background: rgba(0,0,0,0.1); border-radius: 2px; overflow: hidden; }
     .skill-bar-fill {
       height: 100%; background: var(--white); border-radius: 2px;
       width: 0; transition: width 1.2s var(--ease);
@@ -134,7 +134,7 @@
     }
     .cat-tabs {
       display: flex; gap: 4px;
-      background: rgba(255,255,255,0.04);
+      background: rgba(0,0,0,0.04);
       border: 1px solid var(--line);
       border-radius: 50px; padding: 4px;
     }
@@ -166,7 +166,7 @@
       animation: cardIn .5s var(--ease) forwards;
     }
     .portfolio-card.hidden { display: none; }
-    .portfolio-card:hover { transform: scale(1.02) !important; border-color: rgba(255,255,255,0.2); }
+    .portfolio-card:hover { transform: scale(1.02) !important; border-color: rgba(0,0,0,0.15); box-shadow: 0 8px 32px rgba(26,21,48,0.1); }
 
     .card-thumb {
       aspect-ratio: 16/9; overflow: hidden; position: relative;
@@ -202,9 +202,9 @@
       letter-spacing: 1.5px; text-transform: uppercase;
       padding: 3px 8px; border-radius: 4px; margin-bottom: 8px;
     }
-    .cat-2d { color: var(--tag-2d); background: rgba(74,158,255,.12); }
-    .cat-3d { color: var(--tag-3d); background: rgba(191,107,255,.12); }
-    .cat-ai { color: var(--tag-ai); background: rgba(0,212,160,.12); }
+    .cat-2d { color: var(--tag-2d); background: rgba(45,111,214,.1); }
+    .cat-3d { color: var(--tag-3d); background: rgba(124,58,237,.1); }
+    .cat-ai { color: var(--tag-ai); background: rgba(0,151,122,.1); }
     .card-title { font-size: 15px; font-weight: 600; color: var(--gray1); margin-bottom: 4px; line-height: 1.3; }
     .card-desc  { font-size: 12px; color: var(--gray3); }
 
@@ -259,11 +259,11 @@
     .modal-tag {
       font-size: 11px; font-weight: 500;
       padding: 4px 10px; border-radius: 6px;
-      border: 1px solid rgba(255,255,255,0.1);
-      color: var(--gray2); background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #ccc; background: rgba(255,255,255,0.07);
     }
-    .modal-tag.year { color: var(--white); border-color: rgba(255,255,255,0.2); }
-    .modal-tag.contrib { color: var(--tag-ai); border-color: rgba(0,212,160,0.2); background: rgba(0,212,160,0.06); }
+    .modal-tag.year { color: #fff; border-color: rgba(255,255,255,0.3); }
+    .modal-tag.contrib { color: #00d4a0; border-color: rgba(0,212,160,0.3); background: rgba(0,212,160,0.08); }
 
     /* CONTACT */
     #contact {
