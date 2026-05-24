@@ -240,7 +240,6 @@
     }
     .modal-overlay.open { display: flex; }
 
-    /* 가로형 */
     .modal-box {
       width: 100%; max-width: 900px;
       background: var(--bg3);
@@ -250,14 +249,32 @@
     .modal-close {
       position: absolute; top: 16px; right: 16px;
       width: 32px; height: 32px; border-radius: 50%;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
       display: flex; align-items: center; justify-content: center;
       color: var(--white); font-size: 18px;
       transition: background .2s; z-index: 10;
     }
-    .modal-close:hover { background: rgba(255,255,255,0.2); }
+    .modal-close:hover { background: rgba(255,255,255,0.25); }
+
+    /* 가로형 */
     .modal-video { aspect-ratio: 16/9; width: 100%; background: #000; }
     .modal-video iframe { width: 100%; height: 100%; border: none; }
+
+    /* 세로형 — 같은 너비에서 세로로 크게 */
+    .modal-video.is-vertical {
+      aspect-ratio: unset;
+      height: min(75vh, 700px);
+      display: flex; align-items: center; justify-content: center;
+      background: #000;
+    }
+    .modal-video.is-vertical iframe {
+      height: 100%;
+      width: auto;
+      aspect-ratio: 9/16;
+      border: none;
+    }
+
     .modal-info { padding: 20px 24px 24px; }
     .modal-info h3 { font-size: 18px; font-weight: 600; margin-bottom: 14px; }
     .modal-meta { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -269,15 +286,6 @@
     }
     .modal-tag.year { color: var(--white); border-color: rgba(255,255,255,0.2); }
     .modal-tag.contrib { color: var(--tag-ai); border-color: rgba(0,212,160,0.2); background: rgba(0,212,160,0.06); }
-
-    /* 세로형 (vertical) — 세로 영상 크게 + 정보 아래 */
-    .modal-box.is-vertical {
-      max-width: 420px;
-    }
-    .modal-box.is-vertical .modal-video {
-      aspect-ratio: 9/16;
-      width: 100%;
-    }
 
     /* CONTACT */
     #contact {
@@ -638,10 +646,8 @@
         meta.innerHTML += `<span class="modal-tag">${t.trim()}</span>`;
       });
     }
-    const box = document.querySelector('.modal-box');
-    box.classList.toggle('is-vertical', !!w.v);
-
     const vid = document.getElementById('modalVideo');
+    vid.classList.toggle('is-vertical', !!w.v);
     if (w.id) {
       const hashParam = w.hash ? `&h=${w.hash}` : '';
       vid.innerHTML = `<iframe
@@ -660,7 +666,9 @@
   }
   function closeModalDirect() {
     document.getElementById('modal').classList.remove('open');
-    document.getElementById('modalVideo').innerHTML = '';
+    const vid = document.getElementById('modalVideo');
+    vid.innerHTML = '';
+    vid.classList.remove('is-vertical');
     document.body.style.overflow = '';
   }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
