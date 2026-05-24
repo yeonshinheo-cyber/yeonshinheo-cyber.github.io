@@ -63,30 +63,20 @@
 
     /* HERO */
     #hero {
-      width: 100%;
       position: relative;
-      overflow: hidden;
       background: #000;
-      padding-top: var(--nav-h);
+      margin-top: var(--nav-h);
     }
     .hero-img-wrap {
-      width: 100%;
       display: block;
-      line-height: 0;
+      width: 100%;
+      font-size: 0;
     }
     .hero-img-wrap img {
-      width: 100%;
-      height: auto;
       display: block;
-      object-fit: cover;
-    }
-    /* 모바일: 이미지 세로 너무 길어지지 않게 최대 높이 제한 */
-    @media (max-width: 768px) {
-      .hero-img-wrap img {
-        max-height: 60vw;
-        object-fit: cover;
-        object-position: center top;
-      }
+      width: 100% !important;
+      height: auto !important;
+      max-width: 100%;
     }
     .hero-scroll {
       position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
@@ -360,7 +350,7 @@
   <!-- HERO -->
   <section id="hero">
     <div class="hero-img-wrap">
-      <img src="hero.jpg" alt="Heo Yeonshin — Motion Graphic Portfolio" />
+      <img src="hero.jpg.jpg" alt="Heo Yeonshin — Motion Graphic Portfolio" />
     </div>
     <div class="hero-scroll">
       <div class="scroll-line"></div>
