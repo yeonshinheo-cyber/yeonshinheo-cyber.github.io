@@ -233,12 +233,14 @@
     /* MODAL */
     .modal-overlay {
       position: fixed; inset: 0; z-index: 200;
-      background: rgba(0,0,0,0.9);
-      backdrop-filter: blur(16px);
+      background: rgba(0,0,0,0.92);
+      backdrop-filter: blur(20px);
       display: none; align-items: center; justify-content: center;
       padding: 24px;
     }
     .modal-overlay.open { display: flex; }
+
+    /* 가로형 */
     .modal-box {
       width: 100%; max-width: 900px;
       background: var(--bg3);
@@ -267,6 +269,29 @@
     }
     .modal-tag.year { color: var(--white); border-color: rgba(255,255,255,0.2); }
     .modal-tag.contrib { color: var(--tag-ai); border-color: rgba(0,212,160,0.2); background: rgba(0,212,160,0.06); }
+
+    /* 세로형 (vertical) */
+    .modal-box.is-vertical {
+      max-width: 720px;
+      display: flex; flex-direction: row; align-items: stretch;
+    }
+    .modal-box.is-vertical .modal-video {
+      aspect-ratio: 9/16;
+      width: 300px; min-width: 300px;
+      flex-shrink: 0;
+    }
+    .modal-box.is-vertical .modal-info {
+      flex: 1;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 32px 28px;
+    }
+    .modal-box.is-vertical .modal-close {
+      top: 12px; right: 12px;
+    }
+    @media (max-width: 640px) {
+      .modal-box.is-vertical { flex-direction: column; }
+      .modal-box.is-vertical .modal-video { width: 100%; aspect-ratio: 9/16; min-width: unset; }
+    }
 
     /* CONTACT */
     #contact {
@@ -486,39 +511,39 @@
   const works = [
 
     /* ── 2D Motion — 2026 먼저 ───────────────────────── */
-    { cat:'2d', id:'1195078214', hash:'e93446a85c', title:'Huggies · Short-form Ad',              year:'2026', tools:'After Effects · Premiere Pro',                  contrib:'100%', thumb:'' },
-    { cat:'2d', id:'1195078202', hash:'162cff6485', title:'LG U+ · MWC 26 · Brand Clip',          year:'2026', tools:'After Effects · Premiere Pro',                  contrib:'100%', thumb:'' },
-    { cat:'2d', id:'1195078210', hash:'6afcd94d9d', title:'LG U+ · Enterprise · Brand Clip',      year:'2026', tools:'After Effects · Premiere Pro',                  contrib:'100%', thumb:'' },
-    { cat:'2d', id:'1195077768', hash:'2ea422728b', title:'ABL생명 · 보험료할인 · Short-form',       year:'2025', tools:'After Effects · ComfyUI · Premiere Pro',        contrib:'100%', thumb:'' },
-    { cat:'2d', id:'1195078183', hash:'10e29c48a3', title:'Huggies · 육아일기 · Short-form',        year:'2025', tools:'After Effects · Premiere Pro',                  contrib:'80%',  thumb:'' },
-    { cat:'2d', id:'1195078185', hash:'209a08c360', title:'Huggies · 육아일기 티징 · Short-form',   year:'2025', tools:'After Effects · Premiere Pro',                  contrib:'80%',  thumb:'' },
-    { cat:'2d', id:'1195078186', hash:'5e40668a1a', title:'Huggies · 2025 신제품 · Short-form Ad', year:'2025', tools:'After Effects · Premiere Pro',                  contrib:'80%',  thumb:'' },
-    { cat:'2d', id:'1195077744', hash:'7b60cc35c3', title:'Huggies · 애니메이션 · Short-form 3',   year:'2025', tools:'After Effects · Premiere Pro',                  contrib:'80%',  thumb:'' },
-    { cat:'2d', id:'1195077754', hash:'bcdbb7e8cb', title:'Huggies · 허그박스 소개 · Short-form',  year:'2025', tools:'After Effects · Premiere Pro',                  contrib:'80%',  thumb:'' },
-    { cat:'2d', id:'1195078200', hash:'85954c48ce', title:'LG U+ · Simply. Agent · Brand Clip',   year:'2025', tools:'After Effects · Premiere Pro',                  contrib:'100%', thumb:'' },
-    { cat:'2d', id:'1195077743', hash:'d200d5f869', title:'좋은느낌 · 흡수력강조 · Short-form',     year:'2024', tools:'After Effects · Premiere Pro',                  contrib:'100%', thumb:'' },
-    { cat:'2d', id:'1195077755', hash:'70db5e9b7c', title:'Huggies · 애니메이션 · Short-form 1',   year:'2024', tools:'After Effects · Premiere Pro',                  contrib:'80%',  thumb:'' },
-    { cat:'2d', id:'1195077761', hash:'17ba984542', title:'Huggies · Brand Clip · Youtube 2',     year:'2024', tools:'After Effects · Premiere Pro',                  contrib:'100%', thumb:'' },
-    { cat:'2d', id:'1195077766', hash:'ecccf5c336', title:'한국벤처투자 · Intro · Youtube',         year:'2024', tools:'After Effects · Premiere Pro',                  contrib:'100%', thumb:'' },
-    { cat:'2d', id:'1195077778', hash:'200f12dd3a', title:'IBK기업은행 · 비딩용 · Short-form',      year:'2024', tools:'After Effects · Premiere Pro',                  contrib:'100%', thumb:'' },
-    { cat:'2d', id:'1195077756', hash:'77c282f503', title:'Huggies · Brand Clip · Youtube 1',     year:'2023', tools:'After Effects · Premiere Pro',                  contrib:'100%', thumb:'' },
-    { cat:'2d', id:'1195077775', hash:'67da5fd66f', title:'Huggies · 애니메이션 · Short-form 2',   year:'2023', tools:'After Effects · Premiere Pro',                  contrib:'100%', thumb:'' },
+    { cat:'2d', id:'1195078214', hash:'e93446a85c', title:'Huggies · Short-form Ad',              year:'2026', tools:'After Effects · Premiere Pro',             contrib:'100%', v:true,  thumb:'' },
+    { cat:'2d', id:'1195078202', hash:'162cff6485', title:'LG U+ · MWC 26 · Brand Clip',          year:'2026', tools:'After Effects · Premiere Pro',             contrib:'100%', v:false, thumb:'' },
+    { cat:'2d', id:'1195078210', hash:'6afcd94d9d', title:'LG U+ · Enterprise · Brand Clip',      year:'2026', tools:'After Effects · Premiere Pro',             contrib:'100%', v:false, thumb:'' },
+    { cat:'2d', id:'1195077768', hash:'2ea422728b', title:'ABL생명 · 보험료할인 · Short-form',       year:'2025', tools:'After Effects · ComfyUI · Premiere Pro', contrib:'100%', v:true,  thumb:'' },
+    { cat:'2d', id:'1195078183', hash:'10e29c48a3', title:'Huggies · 육아일기 · Short-form',        year:'2025', tools:'After Effects · Premiere Pro',             contrib:'80%',  v:true,  thumb:'' },
+    { cat:'2d', id:'1195078185', hash:'209a08c360', title:'Huggies · 육아일기 티징 · Short-form',   year:'2025', tools:'After Effects · Premiere Pro',             contrib:'80%',  v:true,  thumb:'' },
+    { cat:'2d', id:'1195078186', hash:'5e40668a1a', title:'Huggies · 2025 신제품 · Short-form Ad', year:'2025', tools:'After Effects · Premiere Pro',             contrib:'80%',  v:true,  thumb:'' },
+    { cat:'2d', id:'1195077744', hash:'7b60cc35c3', title:'Huggies · 애니메이션 · Short-form 3',   year:'2025', tools:'After Effects · Premiere Pro',             contrib:'80%',  v:true,  thumb:'' },
+    { cat:'2d', id:'1195077754', hash:'bcdbb7e8cb', title:'Huggies · 허그박스 소개 · Short-form',  year:'2025', tools:'After Effects · Premiere Pro',             contrib:'80%',  v:true,  thumb:'' },
+    { cat:'2d', id:'1195078200', hash:'85954c48ce', title:'LG U+ · Simply. Agent · Brand Clip',   year:'2025', tools:'After Effects · Premiere Pro',             contrib:'100%', v:false, thumb:'' },
+    { cat:'2d', id:'1195077743', hash:'d200d5f869', title:'좋은느낌 · 흡수력강조 · Short-form',     year:'2024', tools:'After Effects · Premiere Pro',             contrib:'100%', v:true,  thumb:'' },
+    { cat:'2d', id:'1195077755', hash:'70db5e9b7c', title:'Huggies · 애니메이션 · Short-form 1',   year:'2024', tools:'After Effects · Premiere Pro',             contrib:'80%',  v:true,  thumb:'' },
+    { cat:'2d', id:'1195077761', hash:'17ba984542', title:'Huggies · Brand Clip · Youtube 2',     year:'2024', tools:'After Effects · Premiere Pro',             contrib:'100%', v:false, thumb:'' },
+    { cat:'2d', id:'1195077766', hash:'ecccf5c336', title:'한국벤처투자 · Intro · Youtube',         year:'2024', tools:'After Effects · Premiere Pro',             contrib:'100%', v:false, thumb:'' },
+    { cat:'2d', id:'1195077778', hash:'200f12dd3a', title:'IBK기업은행 · 비딩용 · Short-form',      year:'2024', tools:'After Effects · Premiere Pro',             contrib:'100%', v:true,  thumb:'' },
+    { cat:'2d', id:'1195077756', hash:'77c282f503', title:'Huggies · Brand Clip · Youtube 1',     year:'2023', tools:'After Effects · Premiere Pro',             contrib:'100%', v:false, thumb:'' },
+    { cat:'2d', id:'1195077775', hash:'67da5fd66f', title:'Huggies · 애니메이션 · Short-form 2',   year:'2023', tools:'After Effects · Premiere Pro',             contrib:'100%', v:true,  thumb:'' },
 
     /* ── 3D Motion — 2024 먼저 ───────────────────────── */
-    { cat:'3d', id:'1195077741', hash:'9cf010144d', title:'Huggies · 퓨어코튼 · Brand Film',       year:'2024', tools:'After Effects · Cinema 4D · Premiere Pro',      contrib:'100%', thumb:'' },
-    { cat:'3d', id:'1195077752', hash:'dd0a8cc8cb', title:'Huggies · 프라미스 · Brand Campaign',   year:'2024', tools:'After Effects · Cinema 4D · Premiere Pro',      contrib:'50%',  thumb:'' },
-    { cat:'3d', id:'1195077765', hash:'11c6f69865', title:'Huggies · 하기베어 · Short-form',       year:'2024', tools:'After Effects · Cinema 4D · Premiere Pro',      contrib:'100%', thumb:'' },
-    { cat:'3d', id:'1195077742', hash:'c26afe1452', title:'Huggies · 맥스드라이 · Short-form',     year:'2023', tools:'After Effects · Cinema 4D · Premiere Pro',      contrib:'100%', thumb:'' },
-    { cat:'3d', id:'1195077747', hash:'250fac6f1c', title:'한국벤처투자 · 크빅월드 · Brand Campaign',year:'2023', tools:'After Effects · Cinema 4D · Premiere Pro',      contrib:'50%',  thumb:'' },
-    { cat:'3d', id:'1195077748', hash:'f9c9507d8b', title:'Huggies · 맥스드라이 · Brand Film',     year:'2023', tools:'Storyboard · Planning · Modeling',               contrib:'20%',  thumb:'' },
+    { cat:'3d', id:'1195077741', hash:'9cf010144d', title:'Huggies · 퓨어코튼 · Brand Film',        year:'2024', tools:'After Effects · Cinema 4D · Premiere Pro', contrib:'100%', v:false, thumb:'' },
+    { cat:'3d', id:'1195077752', hash:'dd0a8cc8cb', title:'Huggies · 프라미스 · Brand Campaign',    year:'2024', tools:'After Effects · Cinema 4D · Premiere Pro', contrib:'50%',  v:false, thumb:'' },
+    { cat:'3d', id:'1195077765', hash:'11c6f69865', title:'Huggies · 하기베어 · Short-form',        year:'2024', tools:'After Effects · Cinema 4D · Premiere Pro', contrib:'100%', v:true,  thumb:'' },
+    { cat:'3d', id:'1195077742', hash:'c26afe1452', title:'Huggies · 맥스드라이 · Short-form',      year:'2023', tools:'After Effects · Cinema 4D · Premiere Pro', contrib:'100%', v:true,  thumb:'' },
+    { cat:'3d', id:'1195077747', hash:'250fac6f1c', title:'한국벤처투자 · 크빅월드 · Brand Campaign', year:'2023', tools:'After Effects · Cinema 4D · Premiere Pro', contrib:'50%',  v:false, thumb:'' },
+    { cat:'3d', id:'1195077748', hash:'f9c9507d8b', title:'Huggies · 맥스드라이 · Brand Film',      year:'2023', tools:'Storyboard · Planning · Modeling',         contrib:'20%',  v:false, thumb:'' },
 
     /* ── AI Motion — 2026 먼저 ───────────────────────── */
-    { cat:'ai', id:'1195078208', hash:'d2405c613d', title:'Huggies · 맥스드라이 · Short-form',     year:'2026', tools:'After Effects · ComfyUI · Premiere Pro',        contrib:'100%', thumb:'' },
-    { cat:'ai', id:'1195078211', hash:'10209f99c3', title:'Huggies · 하트너 모집 · Short-form',    year:'2026', tools:'After Effects · ComfyUI · Premiere Pro',        contrib:'100%', thumb:'' },
-    { cat:'ai', id:'1195078221', hash:'815b1dccea', title:'Ontheplanet · 회사 작업물',             year:'2026', tools:'After Effects · ComfyUI · Premiere Pro',        contrib:'100%', thumb:'' },
-    { cat:'ai', id:'1195078243', hash:'5cf99c13a1', title:'배달의민족 · 개인 작업물 Short-form',    year:'2026', tools:'After Effects · ComfyUI · Premiere Pro',        contrib:'100%', thumb:'' },
-    { cat:'ai', id:'1195078201', hash:'8c70e722bb', title:'숨37 · 개인 작업물 Short-form',         year:'2025', tools:'After Effects · ComfyUI · Premiere Pro',        contrib:'100%', thumb:'' },
-    { cat:'ai', id:'1195078238', hash:'aaf842e1c7', title:'Huggies · 비딩제안용 키비쥬얼',          year:'2025', tools:'After Effects · ComfyUI · Premiere Pro',        contrib:'100%', thumb:'' },
+    { cat:'ai', id:'1195078208', hash:'d2405c613d', title:'Huggies · 맥스드라이 · Short-form',      year:'2026', tools:'After Effects · ComfyUI · Premiere Pro', contrib:'100%', v:true,  thumb:'' },
+    { cat:'ai', id:'1195078211', hash:'10209f99c3', title:'Huggies · 하트너 모집 · Short-form',     year:'2026', tools:'After Effects · ComfyUI · Premiere Pro', contrib:'100%', v:true,  thumb:'' },
+    { cat:'ai', id:'1195078221', hash:'815b1dccea', title:'Ontheplanet · 회사 작업물',              year:'2026', tools:'After Effects · ComfyUI · Premiere Pro', contrib:'100%', v:true,  thumb:'' },
+    { cat:'ai', id:'1195078243', hash:'5cf99c13a1', title:'배달의민족 · 개인 작업물 Short-form',     year:'2026', tools:'After Effects · ComfyUI · Premiere Pro', contrib:'100%', v:true,  thumb:'' },
+    { cat:'ai', id:'1195078201', hash:'8c70e722bb', title:'숨37 · 개인 작업물 Short-form',          year:'2025', tools:'After Effects · ComfyUI · Premiere Pro', contrib:'100%', v:true,  thumb:'' },
+    { cat:'ai', id:'1195078238', hash:'aaf842e1c7', title:'Huggies · 비딩제안용 키비쥬얼',           year:'2025', tools:'After Effects · ComfyUI · Premiere Pro', contrib:'100%', v:false, thumb:'' },
 
   ];
   /* ============================================================ */
@@ -563,6 +588,7 @@
     el.className  = 'portfolio-card hidden';
     el.dataset.cat   = w.cat;
     el.dataset.id    = w.id;
+    el.dataset.hash  = w.hash || '';
     el.dataset.title = w.title;
     el.dataset.desc  = w.desc;
     el.innerHTML = `
@@ -626,6 +652,9 @@
         meta.innerHTML += `<span class="modal-tag">${t.trim()}</span>`;
       });
     }
+    const box = document.querySelector('.modal-box');
+    box.classList.toggle('is-vertical', !!w.v);
+
     const vid = document.getElementById('modalVideo');
     if (w.id) {
       const hashParam = w.hash ? `&h=${w.hash}` : '';
@@ -649,6 +678,31 @@
     document.body.style.overflow = '';
   }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
+
+  /* ── Vimeo 썸네일 자동 로드 ── */
+  async function loadThumbnails() {
+    const allCards = document.querySelectorAll('.portfolio-card');
+    for (const card of allCards) {
+      const id   = card.dataset.id;
+      const hash = card.dataset.hash;
+      if (!id || !hash) continue;
+      const placeholder = card.querySelector('.card-placeholder');
+      if (!placeholder) continue;
+      try {
+        const res  = await fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${id}/${hash}&width=640`);
+        const data = await res.json();
+        if (data.thumbnail_url) {
+          const img = document.createElement('img');
+          img.src     = data.thumbnail_url;
+          img.alt     = card.dataset.title || '';
+          img.loading = 'lazy';
+          img.style.cssText = 'width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1)';
+          placeholder.replaceWith(img);
+        }
+      } catch(e) {}
+    }
+  }
+  loadThumbnails();
 
   /* ── Copy Email ── */
   function copyEmail() {
