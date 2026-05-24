@@ -270,27 +270,13 @@
     .modal-tag.year { color: var(--white); border-color: rgba(255,255,255,0.2); }
     .modal-tag.contrib { color: var(--tag-ai); border-color: rgba(0,212,160,0.2); background: rgba(0,212,160,0.06); }
 
-    /* 세로형 (vertical) */
+    /* 세로형 (vertical) — 세로 영상 크게 + 정보 아래 */
     .modal-box.is-vertical {
-      max-width: 720px;
-      display: flex; flex-direction: row; align-items: stretch;
+      max-width: 420px;
     }
     .modal-box.is-vertical .modal-video {
       aspect-ratio: 9/16;
-      width: 300px; min-width: 300px;
-      flex-shrink: 0;
-    }
-    .modal-box.is-vertical .modal-info {
-      flex: 1;
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 32px 28px;
-    }
-    .modal-box.is-vertical .modal-close {
-      top: 12px; right: 12px;
-    }
-    @media (max-width: 640px) {
-      .modal-box.is-vertical { flex-direction: column; }
-      .modal-box.is-vertical .modal-video { width: 100%; aspect-ratio: 9/16; min-width: unset; }
+      width: 100%;
     }
 
     /* CONTACT */
