@@ -7,7 +7,6 @@
   <meta name="description" content="2D·3D·AI 모션그래픽 디자이너 Heo Yeonshin의 포트폴리오 사이트입니다." />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -38,7 +37,6 @@
     }
     a { color: inherit; text-decoration: none; }
     button { cursor: pointer; border: none; background: none; font-family: var(--font); }
-
     /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -60,7 +58,6 @@
       padding: 8px 18px; border-radius: 50px; transition: opacity .2s;
     }
     .nav-contact-btn:hover { opacity: .85; }
-
     /* HERO */
     #hero {
       position: relative;
@@ -95,7 +92,6 @@
       background: linear-gradient(to bottom, var(--gray3), transparent);
       animation: scrollPulse 2s ease-in-out infinite;
     }
-
     /* ABOUT */
     #about { padding: 120px 40px; max-width: 1080px; margin: 0 auto; }
     .section-label {
@@ -124,7 +120,6 @@
       height: 100%; background: var(--white); border-radius: 2px;
       width: 0; transition: width 1.2s var(--ease);
     }
-
     /* PORTFOLIO */
     #portfolio { padding: 120px 40px; max-width: 1200px; margin: 0 auto; }
     .portfolio-header {
@@ -148,14 +143,12 @@
     }
     .cat-tab:hover { color: var(--white); }
     .cat-tab.active { background: var(--white); color: var(--bg); }
-
     /* GRID */
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
-
     /* CARD */
     .portfolio-card {
       position: relative; border-radius: var(--radius); overflow: hidden;
@@ -170,19 +163,16 @@
     }
     .portfolio-card.hidden { display: none; }
     .portfolio-card:hover { transform: scale(1.02) !important; border-color: rgba(0,0,0,0.15); box-shadow: 0 8px 32px rgba(26,21,48,0.1); }
-
     .card-thumb {
       aspect-ratio: 16/9; overflow: hidden; position: relative;
     }
     .card-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
     .portfolio-card:hover .card-thumb img { transform: scale(1.04); }
-
     .card-placeholder {
       width: 100%; height: 100%;
       display: flex; align-items: center; justify-content: center;
     }
     .card-placeholder svg { opacity: .2; }
-
     .play-overlay {
       position: absolute; inset: 0;
       display: flex; align-items: center; justify-content: center;
@@ -197,7 +187,6 @@
       display: flex; align-items: center; justify-content: center;
       border: 1px solid rgba(255,255,255,0.3);
     }
-
     .card-body { padding: 16px 18px 18px; }
     .card-category {
       display: inline-block;
@@ -210,7 +199,6 @@
     .cat-ai { color: var(--tag-ai); background: rgba(0,151,122,.1); }
     .card-title { font-size: 15px; font-weight: 600; color: var(--gray1); margin-bottom: 4px; line-height: 1.3; }
     .card-desc  { font-size: 12px; color: var(--gray3); }
-
     /* MODAL */
     .modal-overlay {
       position: fixed; inset: 0; z-index: 200;
@@ -220,7 +208,6 @@
       padding: 24px;
     }
     .modal-overlay.open { display: flex; }
-
     .modal-box {
       width: 100%; max-width: 900px;
       background: var(--bg3);
@@ -237,12 +224,8 @@
       transition: background .2s; z-index: 10;
     }
     .modal-close:hover { background: rgba(255,255,255,0.25); }
-
-    /* 가로형 */
     .modal-video { aspect-ratio: 16/9; width: 100%; background: #000; }
     .modal-video iframe { width: 100%; height: 100%; border: none; }
-
-    /* 세로형 — 같은 너비에서 세로로 크게 */
     .modal-video.is-vertical {
       aspect-ratio: unset;
       height: min(75vh, 700px);
@@ -255,7 +238,6 @@
       aspect-ratio: 9/16;
       border: none;
     }
-
     .modal-info { padding: 20px 24px 24px; }
     .modal-info h3 { font-size: 18px; font-weight: 600; margin-bottom: 14px; }
     .modal-meta { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -267,7 +249,6 @@
     }
     .modal-tag.year { color: #fff; border-color: rgba(255,255,255,0.3); }
     .modal-tag.contrib { color: #00d4a0; border-color: rgba(0,212,160,0.3); background: rgba(0,212,160,0.08); }
-
     /* CONTACT */
     #contact {
       padding: 120px 40px 160px;
@@ -293,7 +274,6 @@
       height: 18px; transition: color .3s;
     }
     .email-copy-msg.copied { color: var(--tag-ai); }
-
     /* FOOTER */
     footer {
       border-top: 1px solid var(--line);
@@ -302,7 +282,6 @@
       flex-wrap: wrap; gap: 12px;
     }
     footer p { font-size: 12px; color: var(--gray3); }
-
     /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
@@ -321,7 +300,6 @@
       transition: opacity .8s var(--ease), transform .8s var(--ease);
     }
     .reveal.in-view { opacity: 1; transform: none; }
-
     /* RESPONSIVE */
     @media (max-width: 1024px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 768px) {
@@ -341,7 +319,6 @@
   </style>
 </head>
 <body>
-
   <!-- NAV -->
   <nav>
     <span class="nav-logo">Heo Yeonshin</span>
@@ -352,7 +329,6 @@
     </ul>
     <a class="nav-contact-btn" href="mailto:yeonshinheo@gmail.com">Get in touch</a>
   </nav>
-
   <!-- HERO -->
   <section id="hero">
     <div class="hero-img-wrap">
@@ -363,7 +339,6 @@
       <span>Scroll</span>
     </div>
   </section>
-
   <!-- ABOUT -->
   <section id="about">
     <div class="about-grid">
@@ -416,7 +391,6 @@
       </div>
     </div>
   </section>
-
   <!-- PORTFOLIO -->
   <section id="portfolio">
     <div class="portfolio-header">
@@ -432,7 +406,6 @@
     </div>
     <div class="portfolio-grid" id="grid"></div>
   </section>
-
   <!-- CONTACT -->
   <section id="contact">
     <div class="contact-inner">
@@ -446,13 +419,11 @@
       <p class="email-copy-msg" id="copyMsg"></p>
     </div>
   </section>
-
   <!-- FOOTER -->
   <footer>
     <p>© 2025 Heo Yeonshin. All rights reserved.</p>
     <p>Motion Graphic Designer · Seoul, Korea</p>
   </footer>
-
   <!-- MODAL -->
   <div class="modal-overlay" id="modal" onclick="closeModal(event)">
     <div class="modal-box">
@@ -464,20 +435,9 @@
       </div>
     </div>
   </div>
-
   <script>
-  /* ============================================================
-     ★ 여기만 채우면 끝 ★
-
-     cat   : '2d' | '3d' | 'ai'
-     id    : Vimeo 영상 ID  (예: vimeo.com/123456789 → '123456789')
-     title : 카드에 표시될 제목
-     desc  : 카드에 표시될 설명 (클라이언트 · 연도 등)
-     thumb : 썸네일 이미지 경로 (선택) — 없으면 자동 그라디언트
-  ============================================================ */
   const works = [
-
-    /* ── 2D Motion — 2026 먼저 ───────────────────────── */
+    /* ── 2D Motion ───────────────────────── */
     { cat:'2d', id:'1195078214', hash:'e93446a85c', title:'Huggies · Short-form Ad',              year:'2026', tools:'After Effects · Premiere Pro',             contrib:'100%', v:true,  thumb:'' },
     { cat:'2d', id:'1195078202', hash:'162cff6485', title:'LG U+ · MWC 26 · Brand Clip',          year:'2026', tools:'After Effects · Premiere Pro',             contrib:'100%', v:false, thumb:'' },
     { cat:'2d', id:'1195078210', hash:'6afcd94d9d', title:'LG U+ · Enterprise · Brand Clip',      year:'2026', tools:'After Effects · Premiere Pro',             contrib:'100%', v:false, thumb:'' },
@@ -497,8 +457,8 @@
     { cat:'2d', id:'1195077778', hash:'200f12dd3a', title:'IBK기업은행 · 비딩용 · Short-form',      year:'2024', tools:'After Effects · Premiere Pro',             contrib:'100%', v:true,  thumb:'' },
     { cat:'2d', id:'1195077756', hash:'77c282f503', title:'Huggies · Brand Clip · Youtube 1',     year:'2023', tools:'After Effects · Premiere Pro',             contrib:'100%', v:false, thumb:'' },
     { cat:'2d', id:'1195077775', hash:'67da5fd66f', title:'Huggies · 애니메이션 · Short-form 2',   year:'2023', tools:'After Effects · Premiere Pro',             contrib:'100%', v:true,  thumb:'' },
-
-    /* ── 3D Motion — 2024 먼저 ───────────────────────── */
+    /* ── 3D Motion ───────────────────────── */
+    { cat:'3d', id:'1195449296', hash:'c158604208', title:'Duolingo · FOOH · Bidding Content',     year:'2024', tools:'After Effects · Cinema 4D · Premiere Pro', contrib:'100%', v:false, thumb:'' },
     { cat:'3d', id:'1195077741', hash:'9cf010144d', title:'Huggies · 퓨어코튼 · Brand Film',        year:'2024', tools:'After Effects · Cinema 4D · Premiere Pro', contrib:'100%', v:false, thumb:'' },
     { cat:'3d', id:'1195077752', hash:'dd0a8cc8cb', title:'Huggies · 프라미스 · Brand Campaign',    year:'2024', tools:'After Effects · Cinema 4D · Premiere Pro', contrib:'50%',  v:false, thumb:'' },
     { cat:'3d', id:'1195077765', hash:'11c6f69865', title:'Huggies · 하기베어 · Short-form',        year:'2024', tools:'After Effects · Cinema 4D · Premiere Pro', contrib:'100%', v:true,  thumb:'' },
@@ -506,20 +466,15 @@
     { cat:'3d', id:'1195077742', hash:'c26afe1452', title:'Huggies · 맥스드라이 · Short-form',      year:'2023', tools:'After Effects · Cinema 4D · Premiere Pro', contrib:'100%', v:true,  thumb:'' },
     { cat:'3d', id:'1195077747', hash:'250fac6f1c', title:'한국벤처투자 · 크빅월드 · Brand Campaign', year:'2023', tools:'After Effects · Cinema 4D · Premiere Pro', contrib:'50%',  v:false, thumb:'' },
     { cat:'3d', id:'1195077748', hash:'f9c9507d8b', title:'Huggies · 맥스드라이 · Brand Film',      year:'2023', tools:'Storyboard · Planning · Modeling',         contrib:'20%',  v:false, thumb:'' },
-
-    /* ── AI Motion — 2026 먼저 ───────────────────────── */
+    /* ── AI Motion ───────────────────────── */
     { cat:'ai', id:'1195078208', hash:'d2405c613d', title:'Huggies · 맥스드라이 · Short-form',      year:'2026', tools:'After Effects · ComfyUI · Premiere Pro', contrib:'100%', v:true,  thumb:'' },
     { cat:'ai', id:'1195078211', hash:'10209f99c3', title:'Huggies · 하트너 모집 · Short-form',     year:'2026', tools:'After Effects · ComfyUI · Premiere Pro', contrib:'100%', v:true,  thumb:'' },
     { cat:'ai', id:'1195078221', hash:'815b1dccea', title:'Ontheplanet · 회사 작업물',              year:'2026', tools:'After Effects · ComfyUI · Premiere Pro', contrib:'100%', v:false, thumb:'' },
     { cat:'ai', id:'1195078243', hash:'5cf99c13a1', title:'배달의민족 · 개인 작업물 Short-form',     year:'2026', tools:'After Effects · ComfyUI · Premiere Pro', contrib:'100%', v:true,  thumb:'' },
     { cat:'ai', id:'1195078201', hash:'8c70e722bb', title:'숨37 · 개인 작업물 Short-form',          year:'2025', tools:'After Effects · ComfyUI · Premiere Pro', contrib:'100%', v:true,  thumb:'' },
     { cat:'ai', id:'1195078238', hash:'aaf842e1c7', title:'Huggies · 비딩제안용 키비쥬얼',           year:'2025', tools:'After Effects · ComfyUI · Premiere Pro', contrib:'100%', v:false, thumb:'' },
-
   ];
-  /* ============================================================ */
-
-
-  /* ── 카테고리별 그라디언트 (썸네일 없을 때 자동 적용) ── */
+  /* ── 카테고리별 그라디언트 ── */
   const gradients = {
     '2d': [
       'linear-gradient(135deg,#0d1b2a,#1a3a5c)',
@@ -540,12 +495,9 @@
       'linear-gradient(135deg,#001c18,#003c30)',
     ],
   };
-
-  /* ── 카드 DOM 생성 ── */
-  const grid    = document.getElementById('grid');
+  const grid     = document.getElementById('grid');
   const catLabel = { '2d':'2D Motion', '3d':'3D Motion', 'ai':'AI Motion' };
   const catClass = { '2d':'cat-2d',    '3d':'cat-3d',    'ai':'cat-ai'    };
-
   works.forEach((w, i) => {
     const grad = gradients[w.cat][i % gradients[w.cat].length];
     const thumbHTML = w.thumb
@@ -553,14 +505,12 @@
       : `<div class="card-placeholder" style="background:${grad};">
            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
          </div>`;
-
     const el = document.createElement('div');
-    el.className  = 'portfolio-card hidden';
+    el.className     = 'portfolio-card hidden';
     el.dataset.cat   = w.cat;
     el.dataset.id    = w.id;
     el.dataset.hash  = w.hash || '';
     el.dataset.title = w.title;
-    el.dataset.desc  = w.desc;
     el.innerHTML = `
       <div class="card-thumb">
         ${thumbHTML}
@@ -574,16 +524,13 @@
         <span class="card-category ${catClass[w.cat]}">${catLabel[w.cat]}</span>
         <p class="card-title">${w.title}</p>
       </div>`;
-
     el.addEventListener('click', () => openModal(w));
     grid.appendChild(el);
   });
-
   /* ── 카테고리 필터 ── */
   const tabs  = document.querySelectorAll('.cat-tab');
   const cards = () => document.querySelectorAll('.portfolio-card');
   let   active = '2d';
-
   function showCat(cat) {
     active = cat;
     tabs.forEach(t => t.classList.toggle('active', t.dataset.cat === cat));
@@ -596,10 +543,8 @@
       }
     });
   }
-
   tabs.forEach(t => t.addEventListener('click', () => showCat(t.dataset.cat)));
   showCat('2d');
-
   /* ── Scroll Reveal ── */
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -609,7 +554,6 @@
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
   /* ── Modal (Vimeo) ── */
   function openModal(w) {
     document.getElementById('modalTitle').textContent = w.title;
@@ -636,7 +580,6 @@
     document.getElementById('modal').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
-
   function closeModal(e) {
     if (e.target === document.getElementById('modal')) closeModalDirect();
   }
@@ -648,7 +591,6 @@
     document.body.style.overflow = '';
   }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
-
   /* ── Vimeo 썸네일 자동 로드 ── */
   async function loadThumbnails() {
     const allCards = document.querySelectorAll('.portfolio-card');
@@ -673,7 +615,6 @@
     }
   }
   loadThumbnails();
-
   /* ── Copy Email ── */
   function copyEmail() {
     navigator.clipboard.writeText('yeonshinheo@gmail.com').then(() => {
